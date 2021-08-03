@@ -14,23 +14,23 @@ steps {
 stage('Deploy OnPremise') {
 steps {
 script{
-  if(env.GIT_BRANCH == "Dev")
+  if(env.GIT_BRANCH == "dev")
   {
     echo 'Deploying mule project due to the latest code commits in Dev branch…'
     echo 'Deploying to the Development environment….'
-    /*bat 'mvn clean deploy -DmuleDeploy -DskipTests -Dmule.version=4.3.0 -Danypoint.username=rohit_tripointe -Danypoint.password=Tslplabap@123 -Dtarget=TPH-MULE-DEV -Dtarget.type=server -Denv=Development -Dappname=cicd-test-app1'*/
+    bat 'mvn clean deploy -DmuleDeploy -DskipTests -Dmule.version=4.3.0 -Danypoint.username=rohit_tripointe -Danypoint.password=Tslplabap@123 -Dtarget=TPH-MULE-DEV -Dtarget.type=server -Denv=Development -Dappname=cicd-test-app0'
   }
   else if(env.GIT_BRANCH == "QA")
   {
    echo 'Deploying mule project due to the latest code commit in QA branch…'
     echo 'Deploying to the QA environment….'
-    /*bat 'mvn clean deploy -DmuleDeploy -DskipTests -Dmule.version=4.3.0 -Danypoint.username=rohit_tripointe -Danypoint.password=Tslplabap@123 -Dtarget=TPH-MULE-DEV -Dtarget.type=server -Denv=Development -Dappname=cicd-test-app1'*/
+    bat 'mvn clean deploy -DmuleDeploy -DskipTests -Dmule.version=4.3.0 -Danypoint.username=rohit_tripointe -Danypoint.password=Tslplabap@123 -Dtarget=TPH-MULE-DEV -Dtarget.type=server -Denv=Development -Dappname=cicd-test-app0'
   }
-   else if(env.GIT_BRANCH == "main")
+   else if(env.GIT_BRANCH == "master")
   {
   	echo 'Deploying mule project due to the latest code commit in Prod branch…'
     echo 'Deploying to the Production environment….'
-    /*bat 'mvn clean deploy -DmuleDeploy -DskipTests -Dmule.version=4.3.0 -Danypoint.username=rohit_tripointe -Danypoint.password=Tslplabap@123 -Dtarget=TPH-MULE-DEV -Dtarget.type=server -Denv=Development -Dappname=cicd-test-app1'*/
+    bat 'mvn clean deploy -DmuleDeploy -DskipTests -Dmule.version=4.3.0 -Danypoint.username=rohit_tripointe -Danypoint.password=Tslplabap@123 -Dtarget=TPH-MULE-DEV -Dtarget.type=server -Denv=Development -Dappname=cicd-test-app0'
   }
   else
   {
